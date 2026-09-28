@@ -54,4 +54,4 @@ The workflow in [n8n/zaio-rag-workflow.json](n8n/zaio-rag-workflow.json) was imp
 
 - Include `data/student_handbook.pdf` in the repository or deliver it separately if file-size rules require it.
 - Re-run `pytest -q` after changes and record the real results in [test_cases.md](test_cases.md).
-- Follow [DEMO_SCRIPT.md](DEMO_SCRIPT.md) to record indexing, handbook citations, a ZAIO website answer, a refused question, and the n8n webhook in a 5-10 minute Loom video.
+- Record a 5-10 minute Loom video demonstrating indexing, handbook citations, a ZAIO website answer, a refused question, and the n8n webhook.
