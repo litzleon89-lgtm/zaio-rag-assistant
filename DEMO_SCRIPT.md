@@ -6,7 +6,7 @@ Target length: about 7 minutes. Keep the FastAPI app running at `http://127.0.0.
 
 Show the ZAIO Knowledge Desk at `http://127.0.0.1:8001`.
 
-Say: "This is a retrieval-augmented assistant grounded in the March 2026 student handbook PDF and the public ZAIO website. Responses include a handbook page or website URL, and unsupported questions are refused."
+Say: "This is a retrieval-augmented assistant grounded in the 26-page Student Handbook PDF and the public ZAIO website. Responses include a handbook page or website URL, and unsupported questions are refused."
 
 Point out that the source rail reports the indexed chunk count and names both knowledge sources.
 
@@ -44,9 +44,11 @@ Expected response: `I could not find that information in the available knowledge
 
 Show the imported workflow with these nodes connected: Question Webhook -> Ask RAG API -> Return Answer.
 
-Use the n8n test webhook URL with a POST body such as `{"question":"What courses does ZAIO offer?"}`. Show the execution succeeding and returning both the answer and source.
+Use the production webhook URL `http://127.0.0.1:5678/webhook/zaio-rag-ask` with a POST body such as `{"question":"What courses does ZAIO offer?"}`. Show the execution succeeding and returning both the answer and source.
 
 The workflow was imported and its native Windows production webhook was tested successfully. It targets `http://127.0.0.1:8001/ask`; for Docker Desktop n8n, change the HTTP Request URL to `http://host.docker.internal:8001/ask`.
+
+If the n8n editor displays first-time owner setup, complete it locally before recording the editor view. Do not include the password in the recording.
 
 ## 6:30-7:00 | Tests and close
 
