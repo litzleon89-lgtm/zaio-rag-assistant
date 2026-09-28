@@ -1,0 +1,1 @@
+The full 26-page Student Handbook PDF is stored here as `student_handbook.pdf`. To use another copy, pass its path to `python -m zaio_rag.ingest --handbook PATH`. The older Canva viewer export remains as `student_handbook.html`; the PDF takes precedence during default ingestion.

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#112d32">
+    <title>ZAIO Knowledge Desk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script src="/assets/app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-frame">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="ZAIO Knowledge Desk home">
+          <span class="brand-mark" aria-hidden="true">Z</span>
+          <span class="brand-copy"><strong>ZAIO</strong><span>KNOWLEDGE DESK</span></span>
+        </a>
+        <div class="topbar-right">
+          <span class="connection"><span class="status-dot" id="status-dot"></span><span id="status-label">Connecting</span></span>
+          <span class="topbar-divider"></span>
+          <span class="edition">STUDENT SUPPORT</span>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <aside class="source-rail" aria-label="Knowledge sources">
+          <div class="rail-heading"><span>KNOWLEDGE BASE</span><span class="rail-count" id="chunk-count">--</span></div>
+          <div class="source-item">
+            <span class="source-icon handbook-icon" aria-hidden="true">H</span>
+            <span class="source-copy"><strong>Student Handbook</strong><small>Page citations</small></span>
+            <span class="source-state" aria-label="Indexed"></span>
+          </div>
+          <div class="source-item">
+            <span class="source-icon web-icon" aria-hidden="true">W</span>
+            <span class="source-copy"><strong>ZAIO Website</strong><small>zaio.io</small></span>
+            <span class="source-state" aria-label="Indexed"></span>
+          </div>
+          <div class="rail-rule"></div>
+          <div class="rail-foot"><span class="rail-foot-mark" aria-hidden="true">+</span><span>Answers include their source.</span></div>
+        </aside>
+
+        <section class="desk" aria-label="Ask the knowledge assistant">
+          <div class="desk-toolbar">
+            <div class="breadcrumb"><span>Workspace</span><span class="crumb-slash">/</span><strong>Ask ZAIO</strong></div>
+            <span class="mode-label"><span class="mode-indicator"></span> RAG ASSISTANT</span>
+          </div>
+
+          <div class="conversation" id="conversation" aria-live="polite">
+            <section class="welcome" id="welcome">
+              <div class="welcome-kicker"><span class="kicker-line"></span> ZAIO STUDENT KNOWLEDGE</div>
+              <h1>Good questions<br><span>start here.</span></h1>
+              <p class="welcome-copy">Ask about the bootcamps, curriculum, or student handbook.</p>
+              <div class="prompt-label">TRY ASKING</div>
+              <div class="prompt-list">
+                <button class="prompt" type="button" data-question="What courses does ZAIO offer?">
+                  <span>What courses does ZAIO offer?</span><span class="prompt-arrow" aria-hidden="true">&#8599;</span>
+                </button>
+                <button class="prompt" type="button" data-question="What topics are listed in the bootcamp handbook table of contents?">
+                  <span>What topics are in the handbook?</span><span class="prompt-arrow" aria-hidden="true">&#8599;</span>
+                </button>
+                <button class="prompt" type="button" data-question="What is the grading breakdown in the handbook?">
+                  <span>How is the bootcamp graded?</span><span class="prompt-arrow" aria-hidden="true">&#8599;</span>
+                </button>
+              </div>
+            </section>
+            <div class="messages" id="messages"></div>
+          </div>
+
+          <div class="composer-wrap">
+            <form class="composer" id="ask-form">
+              <label class="sr-only" for="question">Ask a question</label>
+              <textarea id="question" name="question" rows="1" maxlength="2000" placeholder="Ask about ZAIO or the handbook..." required></textarea>
+              <button class="send-button" id="send-button" type="submit" aria-label="Send question" title="Send question">
+                <span aria-hidden="true">&#8593;</span>
+              </button>
+            </form>
+            <div class="composer-meta"><span>Grounded in the indexed knowledge base</span><span>ENTER TO SEND</span></div>
+          </div>
+        </section>
+      </main>
+      <div class="page-grain" aria-hidden="true"></div>
+    </div>
+  </body>
+</html>
