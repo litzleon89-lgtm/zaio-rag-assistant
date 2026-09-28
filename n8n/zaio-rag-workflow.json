@@ -1,8 +1,9 @@
 {
   "name": "Ask the ZAIO RAG Assistant",
+  "id": "b07b5b69-6fb6-4ef8-8922-f37571052f8d",
   "nodes": [
     {
-      "parameters": { "httpMethod": "POST", "path": "zaio-rag-ask", "responseMode": "usingRespondToWebhook", "options": {} },
+      "parameters": { "httpMethod": "POST", "path": "zaio-rag-ask", "responseMode": "responseNode", "options": {} },
       "id": "zaio-rag-webhook",
       "name": "Question Webhook",
       "type": "n8n-nodes-base.webhook",
@@ -13,7 +14,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "http://host.docker.internal:8001/ask",
+        "url": "http://127.0.0.1:8001/ask",
         "sendBody": true,
         "specifyBody": "json",
         "jsonBody": "={{ { question: $json.body.question } }}",

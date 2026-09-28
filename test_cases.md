@@ -15,3 +15,7 @@ Run the automated suite with `pytest -q`. These live cases were checked against 
 The suite verifies chunk overlap, handbook HTML fallback extraction, PDF letter-spacing normalization, removal of website chrome, crawler scope, vector ranking, source attribution, course-catalog ranking, source-specific retrieval, handbook topic retrieval, paraphrased communication routing, and refusal behavior.
 
 Verified locally on 2026-09-28 with Python 3.14.7: `17 passed` (60 dependency deprecation warnings). The live index contains 68 chunks: 26 page-numbered handbook chunks and 42 ZAIO website chunks.
+
+## n8n Integration Check
+
+Imported and activated in n8n 2.40.7. A POST to `http://127.0.0.1:5678/webhook/zaio-rag-ask` with `{"question":"What courses does ZAIO offer?"}` returned HTTP 200 with the six-course answer and source `https://www.zaio.io/compare-courses`.

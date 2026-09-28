@@ -48,7 +48,7 @@ See [test_cases.md](test_cases.md) for handbook, website, and out-of-scope cases
 
 ## n8n
 
-Import [n8n/zaio-rag-workflow.json](n8n/zaio-rag-workflow.json). Run the API where n8n can reach it (the exported workflow uses `http://host.docker.internal:8001/ask` for Docker Desktop), then activate the webhook. Send a POST request containing `{"question":"..."}` to the n8n webhook URL; the workflow forwards it to `/ask` and returns the answer and source. Change the HTTP Request node URL if n8n and the API are not on the same host/network.
+The workflow in [n8n/zaio-rag-workflow.json](n8n/zaio-rag-workflow.json) was imported into n8n 2.40.7 and its production webhook was tested successfully. It targets `http://127.0.0.1:8001/ask` for native n8n on the same host as the API. For Docker Desktop n8n, change the HTTP Request node URL to `http://host.docker.internal:8001/ask`. Activate the webhook and send a POST request containing `{"question":"..."}` to `/webhook/zaio-rag-ask`; the workflow forwards it to `/ask` and returns the answer and source.
 
 ## Submission / Demo Checklist
 

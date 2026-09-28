@@ -40,13 +40,13 @@ Ask: "What was ZAIO revenue last year?"
 
 Expected response: `I could not find that information in the available knowledge base.` The source is empty/null because neither indexed source supports the answer.
 
-## 4:45-6:30 | Demonstrate n8n (once n8n is installed and workflow imported)
+## 4:45-6:30 | Demonstrate n8n
 
 Show the imported workflow with these nodes connected: Question Webhook -> Ask RAG API -> Return Answer.
 
 Use the n8n test webhook URL with a POST body such as `{"question":"What courses does ZAIO offer?"}`. Show the execution succeeding and returning both the answer and source.
 
-The API should be reachable from Docker Desktop n8n at `http://host.docker.internal:8001/ask`. If n8n is not running, do not claim this section was tested; explain that the workflow JSON is included for import.
+The workflow was imported and its native Windows production webhook was tested successfully. It targets `http://127.0.0.1:8001/ask`; for Docker Desktop n8n, change the HTTP Request URL to `http://host.docker.internal:8001/ask`.
 
 ## 6:30-7:00 | Tests and close
 
